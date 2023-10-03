@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'mongodb'),
 
     /*
     |--------------------------------------------------------------------------
@@ -45,14 +45,16 @@ return [
 
         'mongodb' => [
             'driver' => 'mongodb',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'dsn' => env('DB_URI', 'mongodb+srv://rashakoujan:<password>@cluster0.9bxdd0s.mongodb.net/?retryWrites=true&w=majority'),
+            'database' => 'myappdb'
+            /*'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', 27017),
             'database' => env('DB_DATABASE', 'homestead'),
             'username' => env('DB_USERNAME', 'homestead'),
             'password' => env('DB_PASSWORD', 'secret'),
             'options' => [
                 'database' => env('DB_AUTHENTICATION_DATABASE', ''),
-            ]
+            ]*/
         ],
 
         'mysql' => [
